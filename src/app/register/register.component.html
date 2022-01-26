@@ -1,0 +1,249 @@
+<app-header1></app-header1>
+
+<section class="about-section about-illustration-img section-gap">
+    <div class="container">
+ 
+            <!-- FAQ Page Title -->
+            <div class="container" style="text-align: -webkit-center;">
+                <div class="col-lg-6" style="align-items: center;">
+                  <div class="section-title left-border" >
+                         <h2 class="title">Submit Your Details Below</h2>
+                    </div>
+                
+                </div>
+
+                <div class="col-lg-12" style="align-items: center;">
+                
+                  <div class="col-lg-6">
+                    <div class="contact-form grey-bg">
+                        <div class="row no-gutters justify-content-center">
+                            <div class="col-10">
+                                <div class="section-title text-center mb-40">
+                                    <h2 class="title"></h2>
+                                </div>
+        
+                                <form [formGroup]="group" (ngSubmit)="Submit()">
+                                    <div class="row">
+                                        <label style="margin-left: 15px;">Full Name</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <input type="text" formControlName="name" class="form-control" placeholder="">
+                                                <span class="icon"><i class="far fa-user-circle"></i></span>
+                                            </div>
+                                        </div>
+
+                                        
+                                        <label style="margin-left: 15px;">Mobile NO</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <input type="text" formControlName="mobile" class="form-control" placeholder="">
+                                                <span class="icon"><i class="far fa-phone"></i></span>
+                                            </div>
+                                        </div>
+                                        <label style="margin-left: 15px;">Email Address</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <input type="email" formControlName="email" class="form-control" placeholder="">
+                                                <span class="icon"><i class="far fa-envelope-open"></i></span>
+                                            </div>
+                                        </div>
+
+                                        <label style="margin-left: 15px;">Password</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <input type="password" formControlName="password" class="form-control" placeholder="Password">
+                                                <span class="icon"><i class="far fa-envelope-open"></i></span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <label style="margin-left: 15px;">Select Country</label>
+                                        <div class="col-lg-12">
+
+                                            <div class="input-group mb-30">
+
+                                                <select formControlName="Country" class="form-control">
+                                
+                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Country</option>
+                                    
+                                                    
+                                    
+                                                    <!-- <option *ngFor="let Country of Countrys">{{Country}}</option> -->
+                                                    <option>Choose Country</option>
+                                                    <option [value]="Countrys">{{Countrys}}</option>
+                                                </select>
+                                                <div *ngIf="f.Country.touched && f.Country.invalid" class="alert alert-danger">
+                                
+                                                    <div *ngIf="f.Country.errors.required">Country is required.</div>
+                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        
+                                        <label style="margin-left: 15px;">Select Zone</label>
+                                        <div class="col-lg-12">
+
+                                            <div class="input-group mb-30">
+
+                                                <select formControlName="Zone" class="form-control"  (change)="loadlom($event.target.value)">
+                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Zone</option>
+
+                                                
+                                                    <option *ngFor="let Zone of Zones?.zone_details" [value]="Zone.zone">{{Zone.zone_name}}</option>
+                                                   
+                                                </select>
+                                                <div *ngIf="f.Zone.touched && f.Zone.invalid" class="alert alert-danger">
+                                
+                                                    <div *ngIf="f.Zone.errors.required">Zone is required.</div>
+                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        
+
+                                        <label style="margin-left: 15px;">Select Lom</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <select formControlName="Lom" class="form-control">
+                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Lom</option>
+                                                  
+                                                    <option *ngFor="let Lom of Loms" [value]="Lom.lom">{{Lom.lom_name}}</option>
+                                                </select>
+                                                <div *ngIf="f.Lom.touched && f.Lom.invalid" class="alert alert-danger">
+                                                    <div *ngIf="f.Lom.errors.required">Lom is required.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                       
+
+                                        
+                                            
+                                                <div class="col-md-12" >
+                                                    <div class="col-md-12">
+                                                        <label style="margin-left: 15px;">JCI Membership ID</label>
+                                                      <div class="input-group col-md-12" style="margin: auto;display: block;">
+                                                        <div class="custom-control custom-radio d-inline-block">
+                                                          <input type="radio" id="customRadio3" (click)=showgstview() name="customRadio" class="custom-control-input">
+                                                          <label class="custom-control-label" for="customRadio3">Yes</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio d-inline-block ml-1">
+                                                          <input type="radio" id="customRadio2" (click)=showpanview() name="customRadio" class="custom-control-input">
+                                                          <label class="custom-control-label" for="customRadio2">No</label>
+                                                        </div>
+                                                      </div>
+                                                  </div>
+                                                </div>
+                                        
+
+
+                                            <div *ngIf="showrefer" class="col-lg-12">
+                                                <div class="col-lg-12">
+                                                    <div class="input-group mb-30">
+                                                        <input type="text" formControlName="membership_id" class="form-control" placeholder="membership_id">
+                                                        <span class="icon"><i class="far fa-envelope-open"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                
+                        
+
+                                    
+
+                                        <label style="margin-left: 15px;">Select MeetingType</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <select formControlName="tabletype" class="form-control"  (change)="loadTable($event.target.value)">
+                                                    <option class="dropdown-item" disabled selected value="undefined">Choose MeetingType</option>
+                                                    <option *ngFor="let tabletype of tabletypes" [value]="tabletype.meeting_type">{{tabletype.meeting_type_name}}</option>
+                                                </select>
+                                                <div *ngIf="f.tabletype.touched && f.tabletype.invalid" class="alert alert-danger">
+                                                    <div *ngIf="f.tabletype.errors.required">MeetingType is required.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <label style="margin-left: 15px;">Select Table</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <select formControlName="table" class="form-control"  (change)="loadBusinesscategory($event.target.value)">
+                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Table</option>
+                                                    <option *ngFor="let table of table" [value]="table.table">{{table.table_name}}</option>
+                                                </select>
+                                                <div *ngIf="f.table.touched && f.table.invalid" class="alert alert-danger">
+                                                    <div *ngIf="f.table.errors.required">Table is required.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <label style="margin-left: 15px;">Select BusinessCategory</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <select formControlName="businesscategory" class="form-control" (change)="loadBusiness($event.target.value)">
+                                                    <option class="dropdown-item" disabled selected value="undefined">Choose BusinessCategory</option>
+                                                    <option *ngFor="let businesscategory of businesscategory" [value]="businesscategory.id">{{businesscategory.category}}</option>
+                                                </select>
+                                                <div *ngIf="f.businesscategory.touched && f.businesscategory.invalid" class="alert alert-danger">
+                                                    <div *ngIf="f.businesscategory.errors.required">BusinessCategory is required.</div>
+                                                </div>
+                                            </div>
+                                        </div> 
+
+<!-- 
+                                        <label style="margin-left: 15px;">Select Table</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <select formControlName="table" class="form-control"  (change)="loadBusinesscategory($event.target.value)">
+                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Table</option>
+                                                    <option *ngFor="let table of table" [value]="table.table">{{table.table_name}}</option>
+                                                </select>
+                                                <div *ngIf="f.table.touched && f.table.invalid" class="alert alert-danger">
+                                                    <div *ngIf="f.table.errors.required">Table is required.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <label style="margin-left: 15px;">Select BusinessCategory</label>
+                                        <div class="col-lg-12">
+                                            <div class="input-group mb-30">
+                                                <select formControlName="table" class="form-control">
+                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Table</option>
+                                                    <option *ngFor="let businesscategory of businesscategory" [value]="businesscategory.id">{{businesscategory.category}}</option>
+                                                </select>
+                                                <div *ngIf="f.businesscategory.touched && f.businesscategory.invalid" class="alert alert-danger">
+                                                    <div *ngIf="f.businesscategory.errors.required">BusinessCategory is required.</div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                     
+                                        <div class="col-12 text-center">
+                                            <button type="submit"  class="main-btn">Submit</button>
+                                        </div>
+                             </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+
+
+    <!--====== Client Area End ======-->
+    <app-footer1></app-footer1>

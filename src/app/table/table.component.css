@@ -1,0 +1,21 @@
+
+.table td, .table th {
+    padding: .75rem;
+    text-align: center;
+    -webkit-text-security: none;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+.section-title .title {
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+table, th, td {
+  border: 1px solid rgb(116, 116, 116);
+  border-collapse: collapse;
+}
+.section-title .title {
+  font-size: 30px;
+  line-height: 1.1;
+}

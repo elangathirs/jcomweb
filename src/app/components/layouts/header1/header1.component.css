@@ -1,0 +1,17 @@
+.site-logo{
+    width: 16%;
+    margin-left: 8%;
+}
+@media only screen and (max-width: 600px) {
+    .site-logo{
+        width: 40%;
+    }
+  }
+
+ .sticky-header{
+    box-shadow: 0px 8px 3px #02537b;
+ }
+  /* .header-nav{
+    position:unset;
+} */
+
