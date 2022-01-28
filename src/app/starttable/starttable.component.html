@@ -2,46 +2,49 @@
 
 <section class="about-section about-illustration-img section-gap">
     <div class="container">
- 
-            <!-- FAQ Page Title -->
-            <div class="container" style="text-align: -webkit-center;">
-                <div class="col-lg-6" style="align-items: center;">
-                  <div class="section-title left-border" >
-                         <h2 class="title">Submit Your Details Below</h2>
-                    </div>
-                
+
+        <!-- FAQ Page Title -->
+        <div class="container" style="text-align: -webkit-center;">
+            <div class="col-lg-6" style="align-items: center;">
+                <div class="section-title left-border">
+                    <h2 class="title">Submit Your Details Below</h2>
                 </div>
 
-                <div class="col-lg-12" style="align-items: center;">
-                
-                  <div class="col-lg-6">
+            </div>
+
+            <div class="col-lg-12" style="align-items: center;">
+
+                <div class="col-lg-6">
                     <div class="contact-form grey-bg">
                         <div class="row no-gutters justify-content-center">
                             <div class="col-10">
                                 <div class="section-title text-center mb-40">
                                     <h2 class="title"></h2>
                                 </div>
-        
+
                                 <form [formGroup]="group" (ngSubmit)="Submit()">
                                     <div class="row">
                                         <label style="margin-left: 15px;">Full Name</label>
                                         <div class="col-lg-12">
                                             <div class="input-group mb-30">
-                                                <input type="text" formControlName="name" class="form-control" placeholder="">
+                                                <input type="text" formControlName="name" class="form-control"
+                                                    placeholder="">
                                                 <span class="icon"><i class="far fa-user-circle"></i></span>
                                             </div>
                                         </div>
                                         <label style="margin-left: 15px;">Mobile NO</label>
                                         <div class="col-lg-12">
                                             <div class="input-group mb-30">
-                                                <input type="text" formControlName="mobile" class="form-control" placeholder="">
+                                                <input type="text" formControlName="mobile" class="form-control"
+                                                    placeholder="">
                                                 <span class="icon"><i class="far fa-phone"></i></span>
                                             </div>
                                         </div>
                                         <label style="margin-left: 15px;">Email Address</label>
                                         <div class="col-lg-12">
                                             <div class="input-group mb-30">
-                                                <input type="email" formControlName="email" class="form-control" placeholder="">
+                                                <input type="email" formControlName="email" class="form-control"
+                                                    placeholder="">
                                                 <span class="icon"><i class="far fa-envelope-open"></i></span>
                                             </div>
                                         </div>
@@ -52,42 +55,48 @@
                                             <div class="input-group mb-30">
 
                                                 <select formControlName="Country" class="form-control">
-                                
-                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Country</option>
-                                    
-                                                    
-                                    
+
+                                                    <option class="dropdown-item" disabled selected value="undefined">
+                                                        Choose Country</option>
+
+
+
                                                     <!-- <option *ngFor="let Country of Countrys">{{Country}}</option> -->
                                                     <option>Choose Country</option>
                                                     <option [value]="Countrys">{{Countrys}}</option>
                                                 </select>
-                                                <div *ngIf="f.Country.touched && f.Country.invalid" class="alert alert-danger">
-                                
+                                                <div *ngIf="f.Country.touched && f.Country.invalid"
+                                                    class="alert alert-danger">
+
                                                     <div *ngIf="f.Country.errors.required">Country is required.</div>
-                                    
+
                                                 </div>
                                             </div>
                                         </div>
 
 
 
-                                        
+
                                         <label style="margin-left: 15px;">Select Zone</label>
                                         <div class="col-lg-12">
 
                                             <div class="input-group mb-30">
 
-                                                <select formControlName="Zone" class="form-control"  (change)="loadlom($event.target.value)">
-                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Zone</option>
+                                                <select formControlName="Zone" class="form-control"
+                                                    (change)="loadlom($event.target.value)">
+                                                    <option class="dropdown-item" disabled selected value="undefined">
+                                                        Choose Zone</option>
 
-                                                
-                                                    <option *ngFor="let Zone of Zones?.zone_details" [value]="Zone.zone">{{Zone.zone_name}}</option>
-                                                   
+
+                                                    <option *ngFor="let Zone of Zones?.zone_details"
+                                                        [value]="Zone.zone">{{Zone.zone_name}}</option>
+
                                                 </select>
-                                                <div *ngIf="f.Zone.touched && f.Zone.invalid" class="alert alert-danger">
-                                
+                                                <div *ngIf="f.Zone.touched && f.Zone.invalid"
+                                                    class="alert alert-danger">
+
                                                     <div *ngIf="f.Zone.errors.required">Zone is required.</div>
-                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -97,9 +106,11 @@
                                         <div class="col-lg-12">
                                             <div class="input-group mb-30">
                                                 <select formControlName="Lom" class="form-control">
-                                                    <option class="dropdown-item" disabled selected value="undefined">Choose Lom</option>
-                                                  
-                                                    <option *ngFor="let Lom of Loms" [value]="Lom.lom">{{Lom.lom_name}}</option>
+                                                    <option class="dropdown-item" disabled selected value="undefined">
+                                                        Choose Lom</option>
+
+                                                    <option *ngFor="let Lom of Loms" [value]="Lom.lom">{{Lom.lom_name}}
+                                                    </option>
                                                 </select>
                                                 <div *ngIf="f.Lom.touched && f.Lom.invalid" class="alert alert-danger">
                                                     <div *ngIf="f.Lom.errors.required">Lom is required.</div>
@@ -111,7 +122,8 @@
                                         <label style="margin-left: 15px;">Select City</label>
                                         <div class="col-lg-12">
                                             <div class="input-group mb-30">
-                                                <input type="text" formControlName="city" class="form-control" placeholder="">
+                                                <input type="text" formControlName="city" class="form-control"
+                                                    placeholder="">
                                                 <span class="icon"><i class="far fa-location-arrow"></i></span>
                                             </div>
                                         </div>
@@ -119,7 +131,8 @@
                                         <label style="margin-left: 15px;">Table Name</label>
                                         <div class="col-lg-12">
                                             <div class="input-group mb-30">
-                                                <input type="text" formControlName="tablename" class="form-control" placeholder="">
+                                                <input type="text" formControlName="tablename" class="form-control"
+                                                    placeholder="">
                                                 <span class="icon"><i class="far fa-table"></i></span>
                                             </div>
                                         </div>
@@ -128,11 +141,13 @@
                                         <div class="col-lg-12">
                                             <div class="input-group mb-30">
                                                 <select formControlName="tabletype" class="form-control">
-                                                   
+
                                                     <option *ngFor="let tabletype of tabletypes">{{tabletype}}</option>
                                                 </select>
-                                                <div *ngIf="f.tabletype.touched && f.tabletype.invalid" class="alert alert-danger">
-                                                    <div *ngIf="f.tabletype.errors.required">tabletype is required.</div>
+                                                <div *ngIf="f.tabletype.touched && f.tabletype.invalid"
+                                                    class="alert alert-danger">
+                                                    <div *ngIf="f.tabletype.errors.required">tabletype is required.
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -140,13 +155,23 @@
                                         <label style="margin-left: 15px;">Total Members Ready To Join</label>
                                         <div class="col-lg-12">
                                             <div class="input-group mb-30">
-                                                <input type="number" min="10" formControlName="total" class="form-control" placeholder="">
+                                                <input type="number" min="10" formControlName="total"
+                                                    class="form-control" placeholder="">
                                                 <span class="icon"><i class=""></i></span>
                                             </div>
                                         </div>
-                                     
+
+                                        <div class="col-lg-12" *ngIf="isOTP">
+                                            <div class="input-group mb-30">
+                                                <input type="number" min="10" formControlName="otp"
+                                                    placeholder="Please enter OTP">
+                                                <span class="icon"><i class=""></i></span>
+                                            </div>
+                                        </div>
+
+
                                         <div class="col-12 text-center">
-                                            <button type="submit"  class="main-btn">Submit</button>
+                                            <button type="submit" class="main-btn">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -154,15 +179,15 @@
                         </div>
                     </div>
                 </div>
-           
 
-                </div>
+
             </div>
-
-           
         </div>
-    </section>
 
 
-    <!--====== Client Area End ======-->
-    <app-footer1></app-footer1>
+    </div>
+</section>
+
+
+<!--====== Client Area End ======-->
+<app-footer1></app-footer1>
